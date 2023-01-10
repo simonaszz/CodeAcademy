@@ -14,7 +14,7 @@ services:
     # interactive:
     # docker exec --interactive --tty ca-php /bin/sh
     # docker exec -it ca-php /bin/sh
-    #
+    # 
     # one time:
     # docker exec ca-php php /app/info.php 
     php:

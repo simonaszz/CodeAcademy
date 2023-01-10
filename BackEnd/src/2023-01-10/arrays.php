@@ -17,10 +17,10 @@ print_r($arr);
 echo $arr[5] . "<br>\n";
 
 $arr = [
-    0 => 2,
-    2 => 'a',
-    5 => 123,
-    // 1 => 'w'
+	0 => 2,
+	2 => 'a',
+	5 => 123,
+	// 1 => 'w'
 ];
 
 var_dump($arr);
@@ -30,9 +30,9 @@ var_dump($arr[5]);
 
 // Associative arrays
 $user = [
-    'name' => 'Kiril',
-    'surname' => 'Clk',
-    'age' => 31,
+	'name' => 'Kiril',
+	'surname' => 'Clk',
+	'age' => 31,
 ];
 
 var_dump($user);
