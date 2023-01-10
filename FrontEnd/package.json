@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "name": "codeacademy",
+  "version": "1.0.0",
+  "main": "1.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simonaszz/CodeAcademy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simonaszz/CodeAcademy/issues"
+  },
+  "homepage": "https://github.com/simonaszz/CodeAcademy#readme",
+  "description": ""
+}
