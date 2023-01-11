@@ -39,7 +39,7 @@ print_r($result);
 
 
 
-// Užpildykite $arr masyvą skaičiais nuo 1 iki 5. Nedeklaruokite masyvo elementų, o tiesiog užpildykite jį $arr[] =
+// asasas   Užpildykite $arr masyvą skaičiais nuo 1 iki 5. Nedeklaruokite masyvo elementų, o tiesiog užpildykite jį $arr[] =
 // nauja reikšme.
 
 
