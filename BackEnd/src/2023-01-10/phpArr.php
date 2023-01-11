@@ -19,7 +19,7 @@ print "{$arr[0]} {$arr[1]} {$arr[2]}";
 
 print LINE;
 
-$arr1 = ['a', 'b', 'c', 'd'];
+$arr = ['a', 'b', 'c', 'd'];
 
 print "{$arr1[0]} + {$arr1[1]}, {$arr1[2]} + {$arr1[3]}";
 
