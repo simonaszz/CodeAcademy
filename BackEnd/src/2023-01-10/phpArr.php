@@ -34,7 +34,8 @@ $arr = [2, 5, 3, 9];
 
 
 $result = ($arr[0] * $arr[1]) + ($arr[2] * $arr[3]);
-echo $result;
+
+print_r($result);
 
 
 
@@ -45,36 +46,17 @@ echo $result;
 print LINE;
 
 
+$arr0 = range(1, 5);
 
+$slice1 = array_slice($arr0, 0, 5);
 
+foreach ($slice1 as $s) {
 
+    print $s;
+}
 
+print LINE;
 
-
-
-// $arr = ["a", "b", "c"];
-// var_dump($arr);
-
-// echo '<br>';
-
-// echo $arr[0] . ' ' . $arr[1] . ' ' . $arr[2];
-
-// echo '<br>';
-
-// $arr2 = ['a', 'b', 'c', 'd'];
-
-// echo $arr2[0] . ' + ' . $arr2[1] . ', ' . $arr2[2] . ' + ' . $arr2[3];
-
-// echo '<br>';
-
-// $arr3 = [2, 5, 3, 9];
-
-// $result = ($arr3[0] * $arr3[1]) + ($arr3[2] * $arr3[3]);
-
-// echo $result;
-
-// echo '<br>';
-
-// $arr4 = [];
-
-// for ($i = 1; $i <= 5; $i++) { // $arr4[$i]=$i; // } // var_dump($arr4);
+$arr1 = [];
+array_push($arr1, 1, 2, 3, 4, 5);
+print_r($arr1);
