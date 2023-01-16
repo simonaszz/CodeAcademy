@@ -1,57 +1,71 @@
 <?php
 
+$name = 'Kiril';
 
+// https://www.php.net/manual/en/functions.user-defined.php
+function square(int $number) {
+	// var_dump($name); // Warning: Undefined variable
 
+	$squareOfNumber = $number * $number;
 
-// Parašykite funkciją, kuri grąžina skaičiaus kvadratą. Skaičius perduodamas kaip parametras.
-
-// Parašykite funkciją, kuri grąžina dviejų skaičių sumą. Skaičiai perduodami funkcijos parametrus.
-
-// Parašykite funkciją, kuri iš antro parametro atima pirmą ir padalija iš trečio.
-
-// Parašykite funkciją, kuri priima kaip parametrą skaičių nuo 1 iki 7, o grąžina savaitės dieną lietuvių kalba.
-
-function sqr($number)
-{
-    return pow($number, 2);
+	return $squareOfNumber;
 }
 
-echo sqr(2);
+echo square(7);
 
-echo '<br>';
+echo "<br>\n";
 
-function sum($number, $number2)
+// https://www.php.net/manual/en/functions.anonymous.php
+$anonymousVarDump = function(string $value) {
+	var_dump($value);
+};
+
+$anonymousVarDump($name);
+
+$workers = [
+	[
+		'name' => 'Antanas',
+		'salary' => 410
+	],
+
+	[
+		'name' => 'Bronius',
+		'salary' => 420
+	],
+
+	[
+		'name' => 'Česlovas',
+		'salary' => 430
+	]
+];
+
+var_dump($workers);
+
+$bonus = 300;
+
+// https://www.php.net/manual/en/function.array-map.php
+$workersWithBonus = array_map(function($worker) use($bonus) {
+	$worker['salary'] += $bonus;
+
+	return $worker;
+}, $workers);
+
+var_dump($workersWithBonus);
+
+// https://www.php.net/manual/en/functions.arrow.php
+$workersWithBonusArrow = array_map(fn($worker) => $worker['salary'] += $bonus, $workers);
+
+var_dump($workersWithBonusArrow);
+
+// https://www.php.net/manual/en/functions.arguments.php#functions.named-arguments
+
+function createUser($name, $surname = null, $address = null, $city = null, $email = null, $phone = null)
 {
-    return $number + $number2;
+	// https://www.php.net/manual/en/function.compact.php
+	return compact('name', 'surname', 'address', 'city', 'email', 'phone');
 }
 
-echo sum(1, 2);
-
-
-echo '<br>';
-
-function someMath($number1, $number2, $number3)
-{
-    return ($number2 - $number1) / $number3;
-}
-
-echo someMath(4, 5, 1);
-
-function dayOfTheWeek($number)
-{
-    $arr = [
-        'Pirmadienis',
-        'Antradienis',
-        'Trečiadienis',
-        'Ketvirtadienis',
-        'Penktadienis',
-        'Šeštadienis',
-        'Sekmadienis'
-    ];
-    return $arr[$number - 1];
-}
-
-
-echo '<br>';
-
-echo dayOfTheWeek(1);
+var_dump(createUser('Kiril', null, null, null, 'hello@nonamez.name'));
+var_dump(createUser('Kiril', 'hello@nonamez.name'));
+var_dump(createUser('Kiril', email: 'hello@nonamez.name'));
+var_dump(createUser('Kiril', phone: '+370612345678'));
