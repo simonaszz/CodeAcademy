@@ -1,5 +1,8 @@
 <?php
 
+define('UPLOAD_DIR', __DIR__ . '/uploads');
+define('ALLOWED_EXTENTIONS', ['png', 'jpg', 'jpeg']);
+
 // https://stackoverflow.com/questions/4356289/php-random-string-generator
 function generateRandomString($length = 10) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -13,7 +16,9 @@ function generateRandomString($length = 10) {
     return $randomString;
 }
 
-function handleFileUpload($file) {
+if (isset($_FILES['photo'])) {
+    $file = $_FILES['photo'];
+
     if ($file['error'] == UPLOAD_ERR_OK) {
         // https://www.php.net/manual/en/function.pathinfo.php
         $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
@@ -38,5 +43,7 @@ function handleFileUpload($file) {
         } while (file_exists($path));
 
         move_uploaded_file($file['tmp_name'], $path);
+
+        $downloadFilePath = str_replace('/app', '', $path);
     }
 }
