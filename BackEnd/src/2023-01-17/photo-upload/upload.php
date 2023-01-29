@@ -4,7 +4,8 @@ define('UPLOAD_DIR', __DIR__ . '/uploads');
 define('ALLOWED_EXTENTIONS', ['png', 'jpg', 'jpeg']);
 
 // https://stackoverflow.com/questions/4356289/php-random-string-generator
-function generateRandomString($length = 10) {
+function generateRandomString($length = 10)
+{
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charactersLength = strlen($characters);
     $randomString = '';
@@ -23,7 +24,7 @@ if (isset($_FILES['photo'])) {
         // https://www.php.net/manual/en/function.pathinfo.php
         $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
         $ext = strtolower($ext);
-        
+
         if (!in_array($ext, ALLOWED_EXTENTIONS)) {
             throw new Exception('File extention not allowed', 1);
         }
@@ -33,7 +34,7 @@ if (isset($_FILES['photo'])) {
         // https://www.php.net/manual/en/function.is-dir.php
         if (!is_dir($path)) {
             // https://www.php.net/manual/en/function.mkdir.php
-            mkdir($path, 0744, true);
+            mkdir($path, 0755, true);
         }
 
         do {
