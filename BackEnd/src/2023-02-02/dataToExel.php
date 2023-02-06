@@ -27,10 +27,10 @@ header("Content-Type: application/vnd.ms-excel");
 $arrayKeys =  array_keys($flattenedArray);
 $arrayValues = array_values($flattenedArray);
 
-$finalArray = array(
+$finalArray = [
     $arrayKeys,
     $arrayValues
-);
+];
 
 foreach ($finalArray as $row) {
 

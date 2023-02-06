@@ -43,6 +43,14 @@ var_dump($workers);
 
 $bonus = 300;
 
+// foreach ($workers as $key => $worker) {
+// 	$workers[$key]['salary'] += $bonus;
+// }
+
+// foreach ($workers as & $worker) {
+// 	$worker['salary'] += $bonus;
+// }
+
 // https://www.php.net/manual/en/function.array-map.php
 $workersWithBonus = array_map(function($worker) use($bonus) {
 	$worker['salary'] += $bonus;
@@ -50,11 +58,14 @@ $workersWithBonus = array_map(function($worker) use($bonus) {
 	return $worker;
 }, $workers);
 
+echo "workersWithBonus<br>\n";
+
 var_dump($workersWithBonus);
 
 // https://www.php.net/manual/en/functions.arrow.php
 $workersWithBonusArrow = array_map(fn($worker) => $worker['salary'] += $bonus, $workers);
 
+echo "workersWithBonusArrow<br>\n";
 var_dump($workersWithBonusArrow);
 
 // https://www.php.net/manual/en/functions.arguments.php#functions.named-arguments

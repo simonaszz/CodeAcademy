@@ -20,10 +20,12 @@ $arr = [
 	0 => 2,
 	2 => 'a',
 	5 => 123,
-	// 1 => 'w'
+	// 1 => 'w',
+	-1 => 'abc'
 ];
 
 var_dump($arr);
+var_dump($arr[-1]);
 var_dump(isset($arr[1]) ? $arr[1] : 'undefined array key');
 var_dump($arr[1] ?? 'undefined array key');
 var_dump($arr[5]);
