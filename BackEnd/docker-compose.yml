@@ -14,7 +14,7 @@ services:
     # interactive:
     # docker exec --interactive --tty ca-php /bin/sh
     # docker exec -it ca-php /bin/sh
-    #
+    # 
     # one time:
     # docker exec ca-php php /app/info.php 
     php:
@@ -25,3 +25,5 @@ services:
         volumes:
             - ./src:/app
         # tty: true
+        # env_file:
+        #     - ./src/2023-01-30/cv/.env

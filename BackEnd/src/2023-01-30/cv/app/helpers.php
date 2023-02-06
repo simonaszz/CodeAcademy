@@ -42,7 +42,6 @@ if (!function_exists('env')) {
 	}
 } else {
 	throw new Exception('"env" alerdy exists');
-	
 }
 
 if (!function_exists('generateRandomString')) {
