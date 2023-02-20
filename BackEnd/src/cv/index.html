@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <h1>Registracija i kursus</h1>
+    <form action="app.php" method="POST" enctype="multipart/form-data">
+      <label for="fname">Vardas:</label>
+      <input type="text" id="fname" name="fname" /><br />
+      <br />
+      <label for="lname">Pavarde:</label>
+      <input type="text" id="lname" name="lname" /><br />
+      <br />
+      <label for="city">Miestas:</label>
+      <select name="city" id="city">
+        <option value="Vilnius">Vilnius</option>
+        <option value="Kaunas">Kaunas</option>
+        <option value="Klaipeda">Klaipeda</option>
+      </select>
+      <h2>Programavimo kalba:</h2>
+      <input type="checkbox" name="code-lang[]" value="C++" />
+      <label>C++</label><br />
+      <input type="checkbox" name="code-lang[]" value="PHP" />
+      <label> PHP </label><br />
+      <input type="checkbox" name="code-lang[]" value="Python" />
+      <label> Python</label>
+      <h3>Papildoma informacija:</h3>
+      <textarea name="info" cols="40" rows="5"></textarea><br />
+      <input type="file" name="files" multiple /><br />
+      <br />
+      <button type="submit" id="button-submit">Siusti</button>
+    </form>
+    <div id="placeholder"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

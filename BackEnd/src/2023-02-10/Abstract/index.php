@@ -8,10 +8,12 @@ require_once 'classes/Destination.php';
 
 $destination = new Destination('Vilnius', 'Klaipeda');
 
-$travelByCar = new Car(2, 4);
-$travelByBoat = new Boat(10, 10);
-$travelByPlane = new Plane(10, 2);
+$vehicles = [
+	new Car(2, 4),
+	new Boat(2, 4),
+	new Plane(2, 4),
+];
 
-var_dump($travelByCar->getPriceForOneKm(), $travelByCar->getDistancePrice($destination));
-var_dump($travelByBoat->getPriceForOneKm(), $travelByBoat->getDistancePrice($destination));
-var_dump($travelByPlane->getPriceForOneKm(), $travelByPlane->getDistancePrice($destination));
+foreach ($vehicles as $vehicle) {
+	printf("%s => %f, %f\n", $vehicle->getClassName(), $vehicle->getPriceForOneKm(), $vehicle->getDistancePrice($destination));
+}
