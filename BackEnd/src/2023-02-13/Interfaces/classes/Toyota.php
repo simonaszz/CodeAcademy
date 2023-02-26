@@ -9,6 +9,6 @@ class Toyota extends Vehicle implements CarTemplate, VehicleTemplate
 
 	public function getFuelType(): string
 	{
-		return $fuelType;
+		return 'fuelType';
 	}
 }

@@ -15,7 +15,8 @@ class Plane extends TravelOption
 		return 5;
 	}
 
-	public function getDistancePrice(Destination $destination): float {
+	public function getDistancePrice(Destination $destination): float
+	{
 		return (($this->weight / $this->engines) * $destination->getDistance()) * $this->getPriceForOneKm();
 	}
 }

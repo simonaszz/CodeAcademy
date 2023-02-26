@@ -17,7 +17,8 @@ class User
 	public const CONSTANT_SUM = 2 + 2;
 	public const CONSTANT_ARR = ['a', 'b', 'c'];
 	
-	function __construct(
+	// https://www.php.net/manual/en/language.oop5.decon.php#language.oop5.decon.constructor.promotion
+	public function __construct(
 		public ?string $firstName = null,
 		public ?string $lastName = null
 	) {

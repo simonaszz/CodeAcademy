@@ -2,8 +2,8 @@
 
 // https://en.wikipedia.org/wiki/Singleton_pattern
 // https://refactoring.guru/design-patterns/singleton
-class DatabaseConnector {
-
+class DatabaseConnector
+{
 	private static $instance = null;
 
 	function __construct(

@@ -5,7 +5,6 @@
 class Overloading
 {	
 	public $a;
-	// public $b;
 
 	public ?string $foo;
 

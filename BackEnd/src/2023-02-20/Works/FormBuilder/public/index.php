@@ -9,6 +9,11 @@ $formBuilder = new FormBuilder();
 echo $formBuilder->open('index.php', 'POST');
 echo "\n";
 
+echo $formBuilder->input('text', 'first-name', [
+	'disabled',
+	'id' => 'some-id',
+]);
+
 echo $formBuilder->label('first-name', 'First Name', [
 	'for' => 'second-name',
 	'style' => 'border: 1px solid red',

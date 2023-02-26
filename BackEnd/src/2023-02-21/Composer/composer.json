@@ -1,0 +1,13 @@
+{
+    "name": "codeacademy/form-builder",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "require": {
+        "php": "^8.2",
+        "laravel/framework": "^10.1"
+    }
+}

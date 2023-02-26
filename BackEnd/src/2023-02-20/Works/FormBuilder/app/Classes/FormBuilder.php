@@ -7,13 +7,27 @@ use App\Traits\Label;
 use App\Traits\Input;
 use App\Traits\Button;
 
+// // V2
+// use App\Traits\{Label, Input, Button};
+
+// // V3
+// use App\Traits;
+
 class FormBuilder
 {
-	// V1
-	use Label;
-	use Input;
-	use Button;
+	// // V1
+	// use Label;
+	// use Input;
+	// use Button;
 
+	// V2
+	use Label, Input, Button;
+	
+	// // V3
+	// use Traits\Label;
+	// use Traits\Input;
+	// use Traits\Button;
+	
 	const ALLOWED_INPUT_ELEMENTS = ['checkbox', 'radio', 'password', 'email'];
 
 	private function getAttributesAsLine(array $attributes, array $exclude = []): string
@@ -22,7 +36,7 @@ class FormBuilder
 
 		foreach ($attributes as $attrName => $attrValue) {
 			if (!in_array($attrName, $exclude)) {
-				$attrLine .= sprintf(' %s="%s"', $attrName, $attrValue);
+				$attrLine .= ' ' . (is_numeric($attrName) ? $attrValue : sprintf('%s="%s"', $attrName, $attrValue));
 			}
 		}
 
