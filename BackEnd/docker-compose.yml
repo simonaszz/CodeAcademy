@@ -27,3 +27,25 @@ services:
         # tty: true
         # env_file:
         #     - ./src/2023-01-30/cv/.env
+        env_file:
+           - .env
+    
+    mysql:
+        container_name: ca-mysql
+        image: mysql:8.0
+        env_file:
+           - .env
+        volumes:
+            - ./docker/mysql/data/mysql:/var/lib/mysql
+        ports:
+            - 3307:3306
+
+    mariadb:
+        container_name: ca-mariadb
+        image: mariadb:11.0-rc
+        env_file:
+           - .env
+        volumes:
+            - ./docker/mysql/data/mariadb:/var/lib/mysql
+        ports:
+            - 3308:3306
